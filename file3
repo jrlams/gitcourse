@@ -1,9 +1,79 @@
-# Creation d'un dossier DevOps
+# Projet TP : Gestion de Dépôt avec Git et GitHub
 
-# Creation de la branche develop
+Ce projet a été réalisé pour mettre en pratique les concepts fondamentaux de Git, notamment la gestion des branches, les fusions (merges) et la synchronisation avec un dépôt distant via SSH.
 
-# Création des files 1, 2 et 3
+---
 
-# Merge de develop vers main
+## 1. Installation de Git
 
-# suppression de file3 et renommage de file1
+Pour installer l'outil Git sur votre système, utilisez les commandes suivantes dans votre terminal :
+
+```bash
+# Mise à jour des dépôts locaux
+sudo apt update
+
+# Installation du paquet Git
+sudo apt install git -y
+
+# Vérification de l'installation
+git --version
+```
+
+---
+
+## 2. Documentation officielle utilisée
+
+Lors de la réalisation de ce TP, les ressources suivantes ont été consultées :
+
+- Documentation officielle de Git
+- GitHub : Connexion via SSH
+- Syntaxe Markdown pour GitHub
+
+---
+
+## 3. Tableau des commandes réalisées
+
+Voici un récapitulatif des commandes Git exécutées durant ce TP :
+
+| Commande | Description |
+|---|---|
+| `git init` | Initialise un nouveau dépôt Git local dans le dossier DevOps. |
+| `git checkout -b develop` | Crée la branche `develop` et bascule dessus immédiatement. |
+| `git add <fichier>` | Ajoute des fichiers à l'index (staging area) avant le commit. |
+| `git commit -m "message"` | Enregistre les modifications dans l'historique du dépôt local. |
+| `git push origin develop` | Envoie la branche `develop` et ses commits vers le dépôt distant GitHub. |
+| `git merge develop` | Fusionne les modifications de `develop` dans la branche actuelle (`main`). |
+| `git mv file1 file1.txt` | Renomme le fichier `file1` en `file1.txt`. |
+| `git rm file3` | Supprime le fichier `file3` du dépôt et du système de fichiers. |
+
+---
+
+## 4. Diagramme du flux de commits et branches
+
+Le schéma suivant illustre le cycle de vie des branches `main` et `develop` lors de nos manipulations :
+
+```gitGraph
+gitGraph
+    commit id: "Initial commit"
+    branch develop
+    checkout develop
+    commit id: "Ajout file1, file2, file3"
+    checkout main
+    merge develop
+    checkout develop
+    commit id: "Création README.md"
+    commit id: "Renommage file1.txt"
+    commit id: "Suppression file3"
+    checkout main
+    merge develop tag: "Final Merge"
+```
+
+---
+
+## 5. État final du projet
+
+Le projet se termine avec la structure suivante sur la branche `main` :
+
+- `file1.txt`
+- `file2`
+- `README.md`
