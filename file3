@@ -1,6 +1,6 @@
 # Projet TP : Gestion de Dépôt avec Git et GitHub
 
-Ce projet a été réalisé pour mettre en pratique les concepts fondamentaux de Git, notamment la gestion des branches, les fusions (merges) et la synchronisation avec un dépôt distant via SSH.
+Ce projet a été réalisé pour mettre en pratique les concepts fondamentaux de Git, notamment la gestion des branches, les fusions  et la synchronisation avec un dépôt distant via SSH.
 
 ---
 
