@@ -52,6 +52,7 @@ Voici un récapitulatif des commandes Git exécutées durant ce TP :
 ## 4. Diagramme du flux de commits et branches
 
 Le schéma suivant illustre le cycle de vie des branches `main` et `develop` lors de nos manipulations :
+![alt text](image.png)
 
 ```gitGraph
 gitGraph
