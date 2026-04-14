@@ -1,0 +1,80 @@
+# Projet TP : Gestion de Dépôt avec Git et GitHub
+
+Ce projet a été réalisé pour mettre en pratique les concepts fondamentaux de Git, notamment la gestion des branches, les fusions  et la synchronisation avec un dépôt distant via SSH.
+
+---
+
+## 1. Installation de Git
+
+Pour installer l'outil Git sur votre système, utilisez les commandes suivantes dans votre terminal :
+
+```bash
+# Mise à jour des dépôts locaux
+sudo apt update
+
+# Installation du paquet Git
+sudo apt install git -y
+
+# Vérification de l'installation
+git --version
+```
+
+---
+
+## 2. Documentation officielle utilisée
+
+Lors de la réalisation de ce TP, les ressources suivantes ont été consultées :
+
+- [Documentation officielle de Git](https://git-scm.com/doc)
+- [GitHub : Connexion via SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
+- [Syntaxe Markdown pour GitHub](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+
+---
+
+## 3. Tableau des commandes réalisées
+
+Voici un récapitulatif des commandes Git exécutées durant ce TP :
+
+| Commande | Description |
+|---|---|
+| `ssh-keygen -t ed25519` | Génère une paire de clés SSH pour sécuriser la connexion GitHub. |
+| `git init` | Initialise un nouveau dépôt Git local dans le dossier DevOps. |
+| `git checkout -b develop` | Crée la branche `develop` et bascule dessus immédiatement. |
+| `git add <fichier>` | Ajoute des fichiers à l'index (staging area) avant le commit. |
+| `git commit -m "message"` | Enregistre les modifications dans l'historique du dépôt local. |
+| `git push origin develop` | Envoie la branche `develop` et ses commits vers le dépôt distant GitHub. |
+| `git merge develop` | Fusionne les modifications de `develop` dans la branche actuelle (`main`). |
+| `git mv file1 file1.txt` | Renomme le fichier `file1` en `file1.txt`. |
+| `git rm file3` | Supprime le fichier `file3` du dépôt et du système de fichiers. |
+
+---
+
+## 4. Diagramme du flux de commits et branches
+
+Le schéma suivant illustre le cycle de vie des branches `main` et `develop` lors de nos manipulations :
+
+```gitGraph
+gitGraph
+    commit id: "Initial commit"
+    branch develop
+    checkout develop
+    commit id: "Ajout file1, file2, file3"
+    checkout main
+    merge develop
+    checkout develop
+    commit id: "Création README.md"
+    commit id: "Renommage file1.txt"
+    commit id: "Suppression file3"
+    checkout main
+    merge develop tag: "Final Merge"
+```
+
+---
+
+## 5. État final du projet
+
+Le projet se termine avec la structure suivante sur la branche `main` :
+
+- `file1.txt`
+- `file2`
+- `README.md`
